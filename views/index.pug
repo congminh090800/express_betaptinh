@@ -1,0 +1,45 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    title Bé tập tính
+    link(rel='stylesheet' href='css/bootstrap.min.css')
+    link(rel='stylesheet' href='css/styles.css')
+  body
+    .container
+      .row
+        h1 BÉ TẬP TÍNH 
+        form(action='form_calculator' method='GET' onsubmit='myFunction()')
+          .txt.col-12-lg.col-12-md.col-12-sm
+            | số thứ nhất: 
+            input#n1(type='text' name='n1' onblur='blurFunc()')
+            .txt.col-12-lg.col-12-md.col-12-sm
+              | số thứ hai:
+              input#n2(type='text' name='n2' onblur='blurFunc2()')
+              .txt.col-12-lg.col-12-md.col-12-sm
+                label.radio-inline
+                  input#cong(type='radio' name='pheptinh' value='cong' checked='')
+                  | Cộng
+                label.radio-inline
+                  input#tru(type='radio' name='pheptinh' value='tru')
+                  | Trừ
+                label.radio-inline
+                  input#nhan(type='radio' name='pheptinh' value='nhan')
+                  | Nhân
+                label.radio-inline
+                  input#chia(type='radio' name='pheptinh' value='chia')
+                  | Chia
+              .txt.col-12-lg.col-12-md.col-12-sm
+                | Kết quả: 
+                input#result(type='text' name='result' value=valOfResult)
+                input(type='submit' value='Tính')
+              .txt.col-12-lg.col-12-md.col-12-sm
+                | Thông báo: 
+                #notify #{message}
+        // jQuery (Bootstrap JS plugins depend on it)
+        script(src='pheptinh.js')
+        script(src='js/jquery-2.1.4.min.js')
+        script(src='js/bootstrap.min.js')
+        script(src='js/script.js')
